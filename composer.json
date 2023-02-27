@@ -1,0 +1,20 @@
+{
+  "name": "vendor_name/frm",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "igorviv",
+      "email": "iupgrader@mail.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "frm\\": "vendor/frm",
+      "app\\": "app"
+    }
+  },
+  "require": {
+  }
+}
