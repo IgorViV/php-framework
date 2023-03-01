@@ -8,4 +8,5 @@
 .vscode
 *.txt
 Thumbs.db
-vendor
+vendor/*
+!vendor/frw
