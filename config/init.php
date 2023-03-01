@@ -10,8 +10,8 @@ define("CACHE", ROOT . '/tmp/cache');
 define("LOGS", ROOT . '/tmp/logs');
 define("CONFIG", ROOT . '/config');
 define("LAYOUT", 'main');
-define("PATH", 'http://frw');
-define("ADMIN", 'http://frw/admin');
+define("PATH", 'http://frw.loc');
+define("ADMIN", 'http://frw.loc/admin');
 define("NO_IMAGE", 'uploads/no_image.jpg');
 
 require_once ROOT . '/vendor/autoload.php';
