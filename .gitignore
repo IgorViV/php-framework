@@ -10,3 +10,4 @@
 Thumbs.db
 vendor/*
 !vendor/frw
+tmp/logs/*
