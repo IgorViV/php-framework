@@ -2,10 +2,12 @@
 
 namespace app\controllers\admin;
 
-class MainController
+use frw\Controller;
+
+class MainController extends Controller
 {
     public function indexAction()
     {
-        echo __METHOD__;
+
     }
 }

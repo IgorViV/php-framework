@@ -47,10 +47,14 @@ class Router
 
             if (class_exists($controller)) {
                 $controllerObject = new $controller(self::$route);
+
+                $controllerObject->getModel();
+
                 $action = self::lowerCamelCase(self::$route['action'] . 'Action');
 
                 if (method_exists($controllerObject, $action)) {
                     $controllerObject->$action();
+                    $controllerObject->getView();
                 } else {
                     throw new \Exception("Метод {$controller}::{$action} не найден", 404);
                 }
@@ -81,7 +85,7 @@ class Router
                 if (!isset($route['admin_prefix'])) {
                     $route['admin_prefix'] = '';
                 } else {
-                    $route['admin_prefix'] .= '\\ ';
+                    $route['admin_prefix'] .= '\\';
                 }
 
                 $route['controller'] = self::upperCamelCase($route['controller']);
