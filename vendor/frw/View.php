@@ -2,6 +2,8 @@
 
 namespace frw;
 
+use RedBeanPHP\R;
+
 class View
 {
     public string $content = '';
@@ -55,5 +57,20 @@ class View
         $out .= '<title>' . h($this->meta['title']) . '</title>' . PHP_EOL;
 
         return $out;
+    }
+
+    public function getDbLogs()
+    {
+        if (DEBUG) {
+            $logs = R::getDatabaseAdapter()
+                ->getDatabase()
+                ->getLogger();
+            $logs = array_merge($logs->grep('SELECT'),
+                $logs->grep('INSERT'),
+                $logs->grep('UPDATE'),
+                $logs->grep('DELETE'));
+
+            debug($logs);
+        }
     }
 }
