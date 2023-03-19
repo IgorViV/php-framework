@@ -11,3 +11,4 @@ Thumbs.db
 vendor/*
 !vendor/frw
 tmp/logs/*
+config/config_db.php
