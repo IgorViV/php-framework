@@ -14,10 +14,11 @@ class Db
         R::setup($db['dsn'], $db['user'], $db['password']);
 
         if (!R::testConnection()) {
-            throw new \Exception('No connection to DBs', 500);
+            throw new \Exception('No connection to DB', 500);
         }
 
         R::freeze(true);
+
         if (DEBUG) {
             R::debug(true, 3);
         }
